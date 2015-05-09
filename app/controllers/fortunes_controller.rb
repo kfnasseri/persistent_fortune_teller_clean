@@ -1,4 +1,11 @@
 class FortunesController < ApplicationController
+  def random_range
+    @minimum = params[:min].to_i
+    @maximum = params[:max].to_i
+    @random = rand(@minimum..@maximum)
+    @color = params[:color]
+  end
+
   def lucky
     @first_number = rand(100)
     @second_number = rand(100)
